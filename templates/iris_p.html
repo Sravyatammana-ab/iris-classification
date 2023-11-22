@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Iris Detection
+        </title>
+        <link
+      rel="stylesheet"
+      href="..\static\css\style.css"
+    >
+    </head>
+    <body>
+        <div class="intro">
+            <h1>IRIS RECOGNITION</h1>
+        </div>
+        <form action="/predict" id="hi" method="GET">
+            
+            <label for="sepallength">Enter Sepal length</label>
+            <input type="text" name="sepallength" id="sepallength" required/>
+            <br />
+      
+            <p>Enter Sepal width</p>
+            <input type="text" name="sepalwidth" id="sepalwidth" required/>
+            <br />
+            
+            <p>Enter Petal length</p>
+            <input type="text" name="petallength" id="petallength" required/>
+            <br />
+            
+            <p>Enter Petal width</p>
+            <input type="text" name="petalwidth" id="petalwidth" required/>
+            <br />
+            
+            <input type="submit" value="submit" >
+          </form>
+
+        <script>
+            document.getElementById('hi').addEventListener("submit",function(event){
+            event.preventDefault();  
+            const sl=document.getElementById('sepallength');
+            const sw=document.getElementById('sepalwidth');
+            const pl=document.getElementById('petallength');
+            const pw=document.getElementById('petalwidth');
+            if (sl.value>10 || sw.value>10 || pl.value>10 || pw.value>10){
+                alert("exceeded value");
+                event.preventDefault();
+            }
+            else{
+                event.target.submit();
+            }
+            });
+        </script>
+    </body>
+ </html>
